@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071c3d">
+
+<title>KIPS School | Rawalpindi</title>
+
+<style>
+:root {
+  --navy: #071c3d;
+  --blue: #123f83;
+  --gold: #f5bd4e;
+  --light: #f4f7fc;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: #17243b;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, .button {
+  cursor: pointer;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 15px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 14px;
+  transition: color .3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 570px;
+  padding: 70px 7%;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 35px;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(4,19,44,.96), rgba(4,19,44,.72)),
+    url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 30px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 570px;
+  color: #e0e8f7;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: bold;
+  transition: transform .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  margin-left: 8px;
+}
+
+.character-wrap {
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.character {
+  font-size: 145px;
+  filter: drop-shadow(0 15px 20px rgba(0,0,0,.2));
+}
+
+.speech {
+  display: inline-block;
+  max-width: 300px;
+  padding: 15px 20px;
+  background: white;
+  color: var(--navy);
+  border-radius: 18px;
+  font-weight: bold;
+  box-shadow: 0 8px 30px #0002;
+}
+
+.speech button {
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+section {
+  padding: 75px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  color: var(--navy);
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: #64748b;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 35px 7%;
+  background: white;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 30px;
+  color: var(--blue);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 7px 28px #10284b10;
+  transition: transform .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card img {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 22px;
+}
+
+.card h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.about {
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-grid img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.about h2 {
+  color: var(--navy);
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.features {
+  margin-top: 18px;
+  list-style: none;
+}
+
+.features li {
+  margin: 8px 0;
+}
+
+.features li::before {
+  content: "✓ ";
+  color: #13845c;
+  font-weight: bold;
+}
+
+.admissions {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: white;
+}
+
+.admissions .section-title h2 {
+  color: white;
+}
+
+.admissions .section-title p {
+  color: #e0e8f7;
+}
+
+.form {
+  background: white;
+  color: #17243b;
+  padding: 28px;
+  max-width: 720px;
+  margin: auto;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6deea;
+  border-radius: 7px;
+  background: #fbfcff;
+}
+
+.form button {
+  grid-column: 1 / -1;
+}
+
+.form-note {
+  grid-column: 1 / -1;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-card .icon {
+  font-size: 34px;
+}
+
+footer {
+  background: #041329;
+  color: white;
+  text-align: center;
+  padding: 30px 7%;
+}
+
+footer p {
+  color: #c
